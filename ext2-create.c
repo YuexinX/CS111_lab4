@@ -452,8 +452,8 @@ void write_root_dir_block(int fd)
 	bytes_remaining -= current_entry.rec_len;
 
 	struct ext2_dir_entry parent_entry = {0}; // New structure to avoid reusing current_entry
-	dir_entry_set(&parent_entry, EXT2_ROOT_INO, "..");
-	dir_entry_write(&parent_entry, fd);
+	dir_entry_set(parent_entry, EXT2_ROOT_INO, "..");
+	dir_entry_write(parent_entry, fd);
 
 	bytes_remaining -= parent_entry.rec_len;
 
