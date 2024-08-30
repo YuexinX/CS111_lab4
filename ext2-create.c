@@ -451,7 +451,7 @@ void write_root_dir_block(int fd)
 
 	bytes_remaining -= current_entry.rec_len;
 
-	dir_entry_set(current_entry, EXT2_ROOT_INO, ".");
+	dir_entry_set(current_entry, EXT2_ROOT_INO, "..");
 	dir_entry_write(current_entry, fd);
 
 	bytes_remaining -= current_entry.rec_len;
